@@ -1,0 +1,73 @@
+<script>
+window.location ="file:///home/khamal_akbar/web/persegi%20panjang/form.html?button=Add#";
+    var list1 = [];
+            var list2 = [];
+            var list3 = [];
+            var list4 = [];
+    
+            var n = 0;
+            var x = 1;
+    
+            function AddRow(){
+    
+                var AddRown = document.getElementById('show');
+                var NewRow = AddRown.insertRow(n);
+    
+                list1[x] = document.getElementById("nama").value;
+                list2[x] = document.getElementById("nim").value;
+                list3[x] = document.getElementById("nilai1").value;
+                list4[x] = document.getElementById("nilai2").value;
+                var qq=document.getElementById("jurusan");
+
+                qq.innerHTML=(list2[x]);
+	
+	
+            }
+                </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <label for="nama">NAMA &nbsp;= </label>
+        <input type="text" id="nama">
+        <br><br>
+        <label for="nim">NIM &nbsp;&nbsp;&nbsp; = </label>
+        <input type="text" id="nim">
+        <br><br>
+        <label for="nilai1">NILAI1 = </label>
+        <input type="text" id="nilai1">
+        <br><br>
+        <label for="nilai2">NILAI2 = </label>
+        <input type="text" id="nilai2"><br>
+        <button style="visibility: hidden;" name="button" id="btn" value="Add" onclick="AddRow()">submit</button>
+    </form>
+    <table border="1" id="show">
+        <thead>
+            <tr>
+                <td>Jurusan</td>
+                <td id="jurusan"></td>
+            </tr>
+            <tr>
+                <td>Nilai rata-rata</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Grade</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Status lulus</td>
+                <td></td>
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>
+
+
