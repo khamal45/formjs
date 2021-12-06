@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahendra Khamal Akbar is number one</title>
+</head>
+<body>
+    <!-- Nama : Mahendra Khamal Akbar -->
+    <!-- Nim  : 21.51.0020 -->
+    <form action="#">
+        <label for="nama">NAMA &nbsp; &nbsp;  : </label>
+        <input type="text" id="nama">
+        <br><br>
+        <label for="nim">NIM &nbsp;&nbsp; &nbsp; &nbsp;  : </label>
+        <input type="text" id="nim">
+        <br><br>
+        <label for="nilai1">NILAI1 &nbsp; : </label>
+        <input type="text" id="nilai1">
+        <br><br>
+        <label for="nilai2">NILAI2 &nbsp; : </label>
+        <input type="text" id="nilai2"><br>
+        <button style="visibility: hidden;" name="button" id="btn" value="Add" onclick="hasil()">submit</button>
+    </form>
+    <hr>
+    <table border="1" id="show">
+        <thead>
+            <tr>
+                <td>Jurusan</td>
+                <td id="jurusan" width="250"></td>
+            </tr>
+            <tr>
+                <td>Nilai rata-rata</td>
+                <td id="rata"></td>
+            </tr>
+            <tr>
+                <td>Grade</td>
+                <td id="grade"></td>
+            </tr>
+            <tr>
+                <td>Status lulus</td>
+                <td id="status"></td>
+            </tr>
+        </thead>
+    </table>
+</body>
+<script>
+    window.location ="index.html?button=Add#";
+        var nama;
+                var nim;
+                var nilai1;
+                var nilai2;
+        
+           
+        
+                function hasil(){
+        
+                 
+                    nama = document.getElementById("nama").value;
+                    nim = document.getElementById("nim").value;
+                    nilai1 = document.getElementById("nilai1").value;
+                    nilai2 = document.getElementById("nilai2").value;
+                    var jurusan=document.getElementById("jurusan");
+                    var rata=document.getElementById("rata");
+                    var grade = document.getElementById("grade");
+                    var status = document.getElementById("status");
+                    let jurusan1 = nim.substring(3, 5);
+                    rata1 = parseInt(nilai1)+parseInt(nilai2);
+                    rata2 = rata1/2;
+                    if(jurusan1 == 51){
+                        jurusan.innerHTML=("Sistem Informasi");
+                    }
+                    else if(jurusan1 == 52){
+                        jurusan.innerHTML=("Teknologi Informasi");
+                    }
+                    else if(jurusan1 == 31){
+                        jurusan.innerHTML=("Manajemen Informasi");
+                    }
+                    else{
+                        jurusan.innerHTML=("Input anda salah");
+                    }
+                    rata.innerHTML=(rata2);
+    
+                    if(rata2 >= 90){
+                        grade.innerHTML=("A");
+                    }
+                   else if(rata2 >= 70){
+                        grade.innerHTML=("B");
+                    }
+                   else if(rata2 >= 50){
+                        grade.innerHTML=("C");
+                    }
+                    else if(rata2 >= 30){
+                        grade.innerHTML=("D");
+                    }
+                    else{
+                        grade.innerHTML=("E");
+                    }
+    
+                    if(rata2 >= 50){
+                        status.innerHTML=("LULUS")
+                    }
+                    else{
+                        status.innerHTML=("TIDAK LULUS")
+                    }
+    
+    
+                }
+                    </script>
+</html>
+
+
